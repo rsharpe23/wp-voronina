@@ -1,0 +1,227 @@
+.work {
+  padding-top: 5rem;
+
+  @media (min-width: $screen-md) {
+    padding-top: 8.9rem;
+  }
+
+  &__title {
+    margin-bottom: 0.4rem;
+
+    &::before {
+      content: "Work";
+    }
+  }
+
+  &__item {
+    flex: 0 0 100%;
+    width: 100%;
+
+    @media (min-width: $screen-md) {
+      &:nth-child(1) {
+        flex: 0 0 39%;
+        width: 39%;
+
+        > figure {
+          margin-top: 16.5rem;
+        }
+      }
+
+      &:nth-child(2) {
+        flex: 0 0 30.75%;
+        width: 30.75%;
+
+        > figure {
+          margin-top: 5.7rem;
+        }
+      }
+
+      &:nth-child(3) {
+        flex: 0 0 30.25%;
+        width: 30.25%;
+
+        > figure {
+          margin-top: 18.5rem;
+        }
+      }
+    }
+
+    figure {
+      margin-top: 2.75rem;
+
+      > a {
+        display: inline-block;
+        width: 100%;
+        height: 400px;
+
+        @media (min-width: $screen-md) {
+          height: auto;
+        }
+
+        .img {
+          height: 100%;
+          object-fit: cover;
+
+          @media (min-width: $screen-md) {
+            height: auto;
+            object-fit: fill;
+          }
+        }
+      }
+
+      > figcaption {
+        > p {
+          margin-top: 0.75rem;
+          margin-bottom: 0.25rem;
+          color: $color-darkest;
+          font-size: $font-size-small;
+          font-weight: $font-weight-light;
+        }
+
+        > h4 {
+          font-weight: $font-weight-bold;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__more {
+    position: relative;
+    margin-top: 5rem;
+
+    @media (min-width: $screen-md) {
+      margin-top: 7.8rem;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 2.2rem; // Необходим для подложки в ::before
+    }
+
+    &::before,
+    &::after {
+      height: 74%;
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      content: none;
+      z-index: -1;
+      width: 67.5%;
+      top: 0;
+      background-color: $bg-color;
+
+      @media (min-width: $screen-xl) {
+        content: "";
+      }
+    }
+
+    &::after {
+      content: "";
+      @include set-bg-image("../img/work-bg.jpg", cover);
+      width: 100%;
+      top: 13%;
+      z-index: -1;
+
+      @media (min-width: $screen-md) {
+        width: 36%;
+        top: 13%;
+        z-index: auto;
+      }
+
+      @media (min-width: $screen-lg) {
+        width: 39%;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 42.35%;
+        top: 17%;
+      }
+    }
+  }
+
+  &__panel,
+  &__link {
+    text-shadow: 2px 2px 2px $color-darkest;
+
+    @media (min-width: $screen-md) {
+      text-shadow: none;
+    }
+  }
+
+  &__panel {
+    padding: 6rem 1rem;
+    color: $text-color-inverted;
+    border: $border-setup;
+
+    @media (min-width: $screen-md) {
+      width: 70%;
+      margin-left: 20%;
+      padding: 4rem 2rem 4rem 10rem;
+      color: $text-color;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 60%;
+      margin-left: 26%;
+      padding: 4rem 4rem 4rem 12rem;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 64%;
+      margin-left: 23%;
+      padding: 6rem 13.25rem 11.5rem;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link {
+    position: relative;
+    margin-top: 0.65rem;
+    @include link-set-color($text-color-inverted);
+
+    @media (min-width: $screen-md) {
+      @include link-set-color($link-color);
+    }
+
+    img {
+      position: absolute;
+      top: 0px;
+      right: -44px;
+    }
+  }
+
+  &__socials {
+    &:nth-of-type(1) {
+      top: 40.25%;
+    }
+
+    &:nth-of-type(2) {
+      top: 83.25%;
+    }
+  }
+
+  &__index {
+    top: 40.85%;
+  }
+
+  &__decors .decors__container {
+    &::before {
+      @include set-gradient((
+        "angle": 180deg,
+        "gradient": (transparent 17%, $strip-color 70.5%, transparent 100%)
+      ));
+    }
+
+    &::after {
+      @include set-gradient((
+        "angle": 180deg,
+        "gradient": ($strip-color 0%, $strip-color 100%)
+      ));
+    }
+  }
+}

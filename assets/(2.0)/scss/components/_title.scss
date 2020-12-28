@@ -1,0 +1,30 @@
+.title {
+  position: relative;
+  margin-top: 2.5rem;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  letter-spacing: 4px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 6rem;
+  }
+
+  &::before {
+    content: "";
+    display: none;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    color: $color-light-gray;
+    font-size: 6rem;
+    font-weight: $font-weight-bold;
+    letter-spacing: 30px;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-md) {
+      display: inline;  
+    }
+  }
+}

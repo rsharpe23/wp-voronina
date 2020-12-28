@@ -1,0 +1,94 @@
+/* Normalize */
+
+.customize-control {
+  margin-bottom: 1.5rem !important;
+}
+
+.remove-button {
+  margin-right: 0 !important;
+}
+
+/* Styles */
+
+.rsharpe-input-group + .rsharpe-input-group {
+  margin-top: 0.5rem;
+}
+
+.rsharpe-label {
+  display: block;
+  margin-bottom: 0.325rem;
+  color: #566;
+  font-style: italic;
+}
+
+.rsharpe-btn {
+  cursor: pointer;
+}
+
+.rsharpe-portlet + .rsharpe-portlet {
+  margin-top: 0.5rem;
+}
+
+.rsharpe-portlet-header {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
+  cursor: move;
+}
+
+.rsharpe-portlet-header:hover {
+  border-color: #999;
+}
+
+.rsharpe-portlet-header > h4 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.rsharpe-portlet-header > h4 > span {
+  display: block;
+  height: 16px;
+  margin: 0 0.1rem;
+}
+
+.rsharpe-portlet-header > h4 > span:not(.ui-icon) {
+  flex-grow: 1;
+  margin-right: 0.35rem;
+  margin-left: 0.35rem;
+}
+
+.rsharpe-portlet-content {
+  padding: 0.65rem 0.5rem;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.rsharpe-portlet.closed .rsharpe-portlet-content {
+  display: none;
+}
+
+.rsharpe-portlet.editable .rsharpe-portlet-header {
+  background-color: #fffa90;
+}
+
+.customize-control-rsharpe_link > .rsharpe-input-group,
+.customize-control-rsharpe_portlets > .rsharpe-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.customize-control-rsharpe_link .rsharpe-label {
+  width: 20%;
+  margin-bottom: 0;
+}
+
+.customize-control-rsharpe_portlets > .rsharpe-input-group {
+  margin-bottom: 0.5rem;
+}
+
+.customize-control-rsharpe_portlets > .rsharpe-input-group .rsharpe-input + .rsharpe-btn {
+  margin-left: 0.25rem;
+}

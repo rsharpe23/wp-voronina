@@ -1,0 +1,16 @@
+.index {
+  display: none;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  border-bottom: 2px solid $color-darken;
+  font-family: $font-family-lato;
+  font-size: $font-size-small;
+  font-weight: $font-weight-light;
+  font-style: italic;
+  line-height: 2;
+  pointer-events: none;
+
+  @media (min-width: $screen-xl) {
+    display: inline-block;
+  }
+}

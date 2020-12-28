@@ -1,0 +1,87 @@
+[
+  {
+    "id": "pagelead_intro_title",
+    "selector": ".intro__title",
+    "type": "text"
+  },
+  {
+    "id": "pagelead_intro_content",
+    "selector": ".intro__content",
+    "type": "editor"
+  },
+  {
+    "id": "pagelead_intro_link",
+    "selector": ".intro__link",
+    "type": "link"
+  },
+
+
+  {
+    "id": "pagelead_work_title",
+    "selector": ".work__title",
+    "type": "text"
+  },
+  {
+    "id": "pagelead_work_panel_title",
+    "selector": ".work__panel > h3",
+    "type": "text"
+  },
+  {
+    "id": "pagelead_work_panel_content",
+    "selector": ".work__panel > div",
+    "type": "editor"
+  },
+  {
+    "id": "pagelead_work_panel_link",
+    "selector": ".work__panel > a",
+    "type": "link"
+  },
+
+
+  {
+    "id": "pagelead_about_title",
+    "selector": ".about__title",
+    "type": "text"
+  },
+  {
+    "id": "pagelead_about_content",
+    "selector": ".about__content",
+    "type": "editor"
+  },
+  {
+    "id": "pagelead_about_link",
+    "selector": ".about__link",
+    "type": "link"
+  },
+
+
+  {
+    "id": "pagelead_prices_title",
+    "selector": ".price__title",
+    "type": "text"
+  },
+
+
+  {
+    "id": "pagelead_contacts_title",
+    "selector": ".footer__title",
+    "type": "text"
+  },
+
+
+  {
+    "id": "phone",
+    "selector": ".header__phone, .footer__menu > li:nth-child(3) > a > span",
+    "type": "text"
+  },
+  {
+    "id": "email",
+    "selector": ".footer__menu > li:nth-child(2) > a > span",
+    "type": "text"
+  },
+  {
+    "id": "skype",
+    "selector": ".footer__menu > li:nth-child(1) > a > span",
+    "type": "text"
+  }
+]

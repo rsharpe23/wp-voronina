@@ -1,0 +1,120 @@
+.header {
+  @extend %flex-center;
+  width: 100%;
+  position: absolute;
+  // position: fixed;
+  z-index: 10;
+
+  &__img-wrap {
+    display: block;
+    
+    // Если установить свойтсво flex: 0 0 auto тогда длинна 
+    // будет взята из свойства width, но в Safari из за значения auto 
+    // появляется баг, поэтому длина устанавливается 2 раза 
+    // в свойствах flex и width
+    flex: 0 0 35%;
+    width: 35%;
+
+    @media (min-width: $screen-md) {
+      flex: 0 0 17.85%;
+      width: 17.85%;
+    }
+  }
+
+  &__navbar {
+    @extend %flex-center;
+    flex: 0 0 65%;
+    width: 65%;
+
+    @media (min-width: $screen-md) {
+      flex: 0 0 82.15%;
+      width: 82.15%;
+      margin-top: 0.85rem;
+    }
+  }
+
+  &__nav {
+    margin-left: auto;
+
+    @media (min-width: $screen-md) {
+      flex: 0 0 60%;
+      width: 60%;
+    }
+
+    @media (min-width: $screen-lg) {
+      flex: 0 0 48.75%;
+      width: 48.75%;
+    }
+  }
+
+  // HACK:
+  &__menu-icon:not(.menu-icon--active) {
+    .menu-icon__bar {
+      background-color: $color-white;
+    }
+  }
+
+  &__menu-icon {
+    margin-right: $gutter-width;
+
+    @media (min-width: $screen-md) {
+      margin-right: auto;
+    }
+
+    @media (min-width: $screen-lg) {
+      display: none;
+    }
+
+    .menu-icon__bar {
+      // background-color: $color-white;
+
+      @media (min-width: $screen-md) {
+        background-color: $menu-icon__bar-bg-color !important;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: relative;
+    margin-right: 1.75rem;
+    margin-left: 1.75rem;
+    margin-bottom: 0;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 90%;
+      height: 4px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate3d(-50%, -25%, 0);
+      border-bottom: 4px solid $color-white;
+    }
+  }
+
+  &__phone {
+    display: none;
+    flex: 0 0 40%;
+    width: 40%;
+    padding-left: 5rem;
+
+    @media (min-width: $screen-md) {
+      display: inline-block;
+    }
+
+    @media (min-width: $screen-lg) {
+      flex: 0 0 51.25%;
+      width: 51.25%;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.decors {
+  @extend %bg-overlay;
+  z-index: -1;
+  overflow-x: hidden;
+  
+  &__container {
+    height: 100%;
+    position: relative;
+    max-width: 1108px;
+
+    @include set-gradient((
+      "angle": 90deg,
+      "gradient": ($strip-color 0.2%, transparent 99.8%, $strip-color 100%)
+    ));
+
+    &::before,
+    &::after {
+      content: "";
+      display: none;
+      width: $strip-width;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+
+      @media (min-width: $screen-md) {
+        display: block;
+      }
+    }
+
+    &::before {
+      left: 33.25%;
+    }
+
+    &::after {
+      left: 66.5%;
+    }
+  }
+
+  &__item {
+    display: none;
+    position: absolute;
+    z-index: 1;
+
+    @media (min-width: $screen-lg) {
+      display: block;  
+    }
+  }
+}

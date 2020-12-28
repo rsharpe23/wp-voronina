@@ -1,0 +1,41 @@
+@function _is-yiq($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+  $yiq-threshold: 150;
+
+  @return $yiq >= $yiq-threshold;
+}
+
+@function _is-empty($str) {
+  @return not $str or $str == "";
+}
+
+@function _str-replace($str, $search, $replace) {
+  $index: str-index($str, $search);
+
+  @if not $index {
+    @return $str;
+  }
+
+  $str-before: str-slice($str, 1, $index - 1);
+  $str-after: str-slice($str, $index + str-length($search));
+
+  @return $str-before + $replace + _str-replace($str-after, $search, $replace);
+}
+
+@function _str-split($str, $separator) {
+  @return null;
+}
+
+@function _rem($px) {
+  $px-per-rem: 16px;
+  $total: $px / $px-per-rem;
+  @return #{$total}rem;
+}
+
+@function _leading-zero($value) {
+  @return if($value > 9, "#{$value}", "0#{$value}");
+}

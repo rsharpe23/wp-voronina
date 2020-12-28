@@ -1,0 +1,95 @@
+.about {
+  padding-top: 5rem;
+
+  @media (min-width: $screen-md) {
+    padding-top: 8.25rem;
+  }
+
+  &::before {
+    content: none;
+    width: 26%;
+    height: 35%;
+    position: absolute;
+    z-index: -1;
+    top: 36.5%;
+    left: 0;
+    background-color: $bg-color;
+
+    @media (min-width: $screen-lg) {
+      content: "";
+    }
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 5.9rem;
+    }
+
+    &::before {
+      content: "About";
+    }
+  }
+
+  &__item {
+    flex: 0 0 100%;
+    width: 100%;
+
+    @media (min-width: $screen-lg) {
+      &:nth-child(1) {
+        flex: 0 0 61%;
+        width: 61%;
+      }
+
+      &:nth-child(2) {
+        flex: 0 0 39%;
+        width: 39%;
+      }
+    }
+  }
+
+  &__panel {
+    position: relative;
+    margin-top: 3rem;
+    padding: 0rem 2rem 3rem 2rem;
+    text-align: center;
+
+    @media (min-width: $screen-md) {
+      margin-top: 4.75rem;
+      text-align: left;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 1rem 4rem 5.5rem 1.2rem;
+      background-color: $bg-color;
+    }
+
+    &::before {
+      content: none;
+      width: 56%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 100%;
+      background-color: $bg-color;
+
+      @media (min-width: $screen-lg) {
+        content: "";
+      }
+    }
+  }
+
+  &__link {
+    margin-top: 1rem;
+  }
+
+  &__index {
+    top: 59.5%;
+  }
+
+  &__socials {
+    top: 61.5%;
+  }
+}

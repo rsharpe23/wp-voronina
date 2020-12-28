@@ -1,0 +1,184 @@
+.price {
+  padding-top: 3rem;
+
+  @media (min-width: $screen-md) {
+    padding-top: 6rem;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    z-index: -1;
+    background-color: $bg-color;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+  }
+
+  &::before {
+    width: 30%;
+    height: 18.25%;
+    top: 44.5%;
+    left: 0;
+  }
+
+  &::after {
+    width: 25%;
+    height: 18.65%;
+    top: 46%;
+    right: 0;
+  }
+
+  &__title {
+    margin-bottom: 0;
+
+    &::before {
+      content: "Price";
+    }
+  }
+
+  &__bg {
+    @media (min-width: $screen-lg) {
+      @include set-gradient(
+        (
+          "angle": 180deg,
+          "gradient": (
+            transparent 44.25%,
+            $bg-color 67%,
+            transparent 100%
+          )
+        )
+      );
+    }
+  }
+
+  &__item {
+    flex: 0 0 100%;
+    width: 100%;
+    position: relative;
+
+    @media (min-width: $screen-md) {
+      &:nth-child(1) {
+        flex: 0 0 39%;
+        width: 39%;
+
+        > figure {
+          margin-top: 22.75rem;
+
+          figcaption {
+            > h3 {
+              margin-left: 19%;
+
+              > p {
+                margin-right: 24%;
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        flex: 0 0 30.75%;
+        width: 30.75%;
+
+        > figure {
+          margin-top: 12rem;
+
+          figcaption {
+            > h3 {
+              margin-left: 15%;
+
+              > p {
+                margin-right: 18%;
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        flex: 0 0 30.25%;
+        width: 30.25%;
+
+        > figure {
+          margin-top: 24.5rem;
+
+          figcaption {
+            > h3 {
+              margin-left: 17%;
+
+              > p {
+                margin-right: 20%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    figure {
+      margin-top: 2.75rem;
+
+      > a {
+        display: inline-block;
+        width: 100%;
+        height: 400px;
+
+        @media (min-width: $screen-md) {
+          height: auto;
+        }
+
+        .img {
+          height: 100%;
+          object-fit: cover;
+
+          @media (min-width: $screen-md) {
+            height: auto;
+            object-fit: fill;
+          }
+        }
+      }
+
+      figcaption {
+        > h3 {
+          margin-top: 1.85rem;
+          color: $main-color;
+          font-weight: $font-weight-bold;
+          text-align: center;
+          line-height: 1;
+
+          @media (min-width: $screen-md) {
+            text-align: left;
+          }
+
+          > p {
+            line-height: 1;
+
+            @media (min-width: $screen-md) {
+              text-align: right;
+            }
+
+            > small {
+              font-size: $font-size-large;
+            }
+          }
+        }
+
+        > p {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__socials {
+    top: 49.25%;
+  }
+
+  &__index {
+    top: 56%;
+  }
+}

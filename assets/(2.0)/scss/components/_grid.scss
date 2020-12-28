@@ -1,0 +1,36 @@
+.container {
+  display: block;
+  width: 100%;
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter-width;
+  padding-left: $gutter-width;
+
+  &--no-gutters {
+    padding-right: 0;
+    padding-left: 0;
+
+    .item-group {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .item {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .item-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$gutter-width;
+    margin-left: -$gutter-width;
+  }
+  
+  .item {
+    padding-right: $gutter-width;
+    padding-left: $gutter-width;
+  }
+}

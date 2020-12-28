@@ -1,0 +1,86 @@
+.footer {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+
+  @media (min-width: $screen-md) {
+    padding-top: 5.75rem;
+    padding-bottom: 6.75rem;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 10rem;
+  }
+
+  &__title {
+    margin-bottom: 3.5rem;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 6.4rem;
+    }
+  }
+
+  &__menu {
+    @extend %flex-center;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 3.5rem;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 4.25rem;
+    }
+
+    @media (min-width: $screen-lg) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &::before {
+      @extend .title::before;
+      content: "Contacts";
+      font-size: 6rem;
+
+      @media (min-width: $screen-lg) {
+        font-size: _rem(120px);
+      }
+    }
+
+    > li {
+      margin-bottom: 1rem;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      letter-spacing: 1.25px;
+
+      @media (min-width: $screen-md) {
+        font-size: $font-size-large;
+      }
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__socials {
+    @extend %flex-center;
+    justify-content: center;
+
+    > li {
+      color: $text-color-inverted;
+      background-color: $color-dark;
+      font-weight: $font-weight;
+      font-size: _rem(20px);
+
+      + li {
+        margin-left: _rem(20px);
+      }
+
+      > a {
+        @extend %flex-center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        color: inherit;
+      }
+    }
+  }
+}

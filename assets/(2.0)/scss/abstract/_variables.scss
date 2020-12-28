@@ -1,0 +1,79 @@
+// Colors
+// ============
+
+$color-green:               #8eb574 !default;
+$color-magento:             #cb98a8 !default;
+
+$color-white:               #fff !default;
+$color-light-gray:          #f8f8f8 !default;
+$color-light-dark:          #878787 !default;
+$color-dark:                #4e4d4e !default;
+$color-darken:              #212021 !default;
+$color-darkest:             #1d1c1c !default;
+
+$main-color:                $color-green !default;
+$bg-color:                  $color-light-gray !default;
+$separator-color:           $color-magento !default;
+
+$text-color:                $color-darken !default;
+$text-color-inverted:       $color-white !default;
+
+
+// Border
+// ============
+
+$border-width:              8px !default;
+$border-color:              $color-green !default;
+$border-setup:              $border-width solid $border-color !default;
+
+
+// Fonts
+// ============
+
+$font-family:               sans-serif !default;
+$font-family-sorceSerifPro: join("Source Serif Pro", $font-family, comma) !default; 
+$font-family-lato:          join("Lato", $font-family, comma) !default; 
+$font-family-myriadPro:     join("Myriad Pro", $font-family, comma) !default;
+
+$font-size:                 1rem !default;
+$font-size-small:           0.875rem !default;
+$font-size-large:           1.125rem !default;
+
+$font-size-h1:              3rem !default;
+$font-size-h2:              2.25rem !default;
+$font-size-h3:              1.5rem !default;
+$font-size-h4:              1.125rem !default;
+
+$font-weight:               400 !default;
+$font-weight-light:         300 !default;
+$font-weight-semibold:      600 !default;
+$font-weight-bold:          700 !default;
+
+
+// Leading
+// ============
+$line-height:               1.25 !default;
+
+
+// Screens
+// ============
+
+$screen-xs:                 0 !default;
+$screen-sm:                 576px !default;
+$screen-md:                 768px !default;
+$screen-lg:                 992px !default;
+$screen-xl:                 1200px !default;
+
+
+// Misc
+// ============
+
+$margin-bottom:             1.825rem !default;
+
+$container-width:           1170px !default;
+$container-width:           1136px;
+
+$gutter-width:              15px !default;
+
+$strip-width:               2px !default;
+$strip-color:               $color-light-gray !default;

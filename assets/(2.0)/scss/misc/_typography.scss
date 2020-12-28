@@ -1,0 +1,40 @@
+// Source Serif Pro
+// ======================
+
+@include add-font("Source Serif Pro", "SourceSerifPro", normal, normal, (
+  "Light":    $font-weight-light,
+  "Regular":  $font-weight,
+  "Semibold": $font-weight-semibold,
+  "Bold":     $font-weight-bold,
+));
+
+@include add-font("Source Serif Pro", "SourceSerifPro", italic, normal, (
+  "LightIt":    $font-weight-light,
+  "It":         $font-weight,
+  "SemiboldIt": $font-weight-semibold,
+  "BoldIt":     $font-weight-bold,
+));
+
+
+// Lato
+// ==========
+
+@include add-font("Lato", "Lato", normal, normal, (
+  "Light": $font-weight-light,
+));
+
+@include add-font("Lato", "Lato", italic, normal, (
+  "LightItalic": $font-weight-light,
+));
+
+
+// Myriad Pro
+// ================
+
+@include add-font("Myriad Pro", "MyriadPro", normal, normal, (
+  "Bold": $font-weight-bold,
+), ".woff2");
+
+@include add-font("Myriad Pro", "MyriadPro", italic, normal, (
+  "BoldIt": $font-weight-bold,
+), ".woff2");

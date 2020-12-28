@@ -1,0 +1,45 @@
+$menu-icon__bar-bg-color: $color-darken !default; // Используется также в header
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 12px;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+
+  &__bar {
+    width: 100%;
+    height: 2px;
+    background-color: $menu-icon__bar-bg-color;
+    @include set-transition(("width", "transform"), 0.25s);
+
+    &--first {
+      width: 85%;
+    }
+
+    &--third {
+      width: 60%;
+    }
+  }
+
+  &--active {
+    .menu-icon__bar {
+      width: 100%;
+
+      &--first {
+        transform: translate3d(0, 5px, 0) rotate(45deg);
+      }
+
+      &--second {
+        width: 0;
+      }
+
+      &--third {
+        transform: translate3d(0, -5px, 0) rotate(-45deg);
+      }
+    }
+  }
+}

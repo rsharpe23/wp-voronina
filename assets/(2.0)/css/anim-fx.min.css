@@ -1,0 +1,2 @@
+.anim-fx{opacity:0;transition:transform .65s,opacity .3s;transition-timing-function:ease-out}.anim-fx.active{opacity:1;transform:translate3d(0,0,0)!important}.anim-to-up{transform:translate3d(0,100%,0)}.anim-to-down{transform:translate3d(0,-100%,0)}.anim-to-right{transform:translate3d(-100%,0,0)}.anim-to-left{transform:translate3d(100%,0,0)}
+/*# sourceMappingURL=anim-fx.min.css.map */

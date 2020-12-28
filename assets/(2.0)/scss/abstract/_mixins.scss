@@ -1,0 +1,175 @@
+@mixin set-transition($prop-list, $duration: 0.15s, $func: ease-in-out) {
+  $prop-value: null;
+
+  @each $prop-name in $prop-list {
+    $total: #{$prop-name} #{$duration} #{$func};
+    $prop-value: append($prop-value, $total, comma);
+  }
+
+  @include set-prop("transition", $prop-value);
+}
+
+@mixin set-prop($prop-name, $prop-value) {
+  @if not _is-empty($prop-value) {
+    #{$prop-name}: $prop-value;
+  }
+}
+
+@mixin map-parse($map, $nest: null, $deep: false) {
+  $prefix: if(_is-empty($nest), "", "#{$nest}-");
+
+  @each $key, $value in $map {
+    $prop-name: #{$prefix}#{$key};
+
+    @if not $deep {
+      #{$prop-name}: $value;
+    } @else {
+      @each $sub-value in $value {
+        #{$prop-name}: $sub-value;
+      }
+    }
+  }
+}
+
+@mixin wrap-in($el) {
+  @if _is-empty($el) {
+    @content;
+  } @else {
+    #{$el} {
+      @content;
+    }
+  }
+}
+
+@mixin set-border-radius($side, $radius: $border-radius) {
+  $side-map: (
+    "top": (
+      "top-left",
+      "top-right"
+    ),
+    "right": (
+      "top-right",
+      "bottom-right"
+    ),
+    "bottom": (
+      "bottom-left",
+      "bottom-right"
+    ),
+    "left": (
+      "top-left",
+      "bottom-left"
+    )
+  );
+
+  @each $key, $value in $side-map {
+    @if $key == $side {
+      @each $sub-value in $value {
+        border-#{$sub-value}-radius: $radius;
+      }
+    }
+  }
+}
+
+@mixin media($screen-size) {
+  @if $screen-size > 0 {
+    @media (min-width: $screen-size) {
+      @content;
+    }
+  } @else if $screen-size == 0 {
+    @content;
+  } @else {
+    @error "Screen size can't been less then 0";
+  }
+}
+
+@mixin add-font($font-family, $font-slug, $font-style, $font-stretch, $font-weight-map, $exclude-ext: null) {
+  $format-map: (
+    ".woff2": "woff2",
+    ".woff": "woff",
+    ".ttf": "truetype"
+  );
+
+  // $exclude-ext может быть списком
+  @if $exclude-ext != null {
+    $format-map: map-remove($format-map, $exclude-ext);
+  }
+
+  @each $font-type, $font-weight in $font-weight-map {
+    $src: null;
+    $path: "../fonts/#{$font-slug}/#{$font-slug}-#{$font-type}";
+
+    @each $ext, $format in $format-map {
+      $temp: url($path+$ext) format($format);
+      $src: append($src, $temp, comma);
+    }
+
+    @font-face {
+      font-family: $font-family;
+      font-weight: $font-weight;
+      font-style: $font-style;
+      font-stretch: $font-stretch;
+      src: $src;
+    }
+  }
+}
+
+@mixin set-bg-image($url, $bg-size: false, $bg-position: false) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+
+  @if $bg-size != false {
+    background-size: $bg-size;
+  }
+
+  @if $bg-position != false {
+    background-position: $bg-position;
+  }
+}
+
+// @mixin set-strips($dir-angle, $color-list) {
+//   $last-size: 0%;
+//   $new-color-list: ();
+
+//   @each $color, $size in $color-list {
+//     $temp: $color $last-size, $color $size;
+//     $new-color-list: append($new-color-list, $temp, comma);
+
+//     $last-size: $size;
+//   }
+
+//   background-image: linear-gradient($dir-angle, $new-color-list);
+// }
+
+@mixin set-gradient($gradient-setup-list) {
+  $linear-gradient: ();
+  $arg-type: type-of($gradient-setup-list);
+
+  @if $arg-type == "list" {
+    @each $gradient-setup in $gradient-setup-list {
+      $linear-gradient: append($linear-gradient, set-gradient__fn($gradient-setup), comma);
+    }
+  } @else if $arg-type == "map" {
+    $linear-gradient: set-gradient__fn($gradient-setup-list);
+  } @else {
+    @error "Invalid argument";
+  }
+
+  background-image: $linear-gradient;
+}
+
+@function set-gradient__fn($gradient-setup) {
+  $last-size: 0%;
+
+  $angle: map-get($gradient-setup, "angle");
+  $gradient: map-get($gradient-setup, "gradient");
+  $new-gradient: ();
+
+  @each $color, $size in $gradient {
+    $temp: $color $last-size, $color $size;
+    $new-gradient: append($new-gradient, $temp, comma);
+
+    $last-size: $size;
+  }
+
+  @return linear-gradient($angle, $new-gradient);
+}
